@@ -2,14 +2,14 @@
 
 **Set up Docker on Cloud Incatance**
 
-1. install docker on ubuntu:
+-> install docker on ubuntu:
 
 ```
 sudo apt install docker.io
 docker --version
 ```
 
-2. install docker compose on ubuntu:
+-> install docker compose on ubuntu:
 
 ```
 DOCKER_CONFIG=${DOCKER_CONFIG:-$HOME/.docker}
@@ -19,3 +19,21 @@ chmod +x $DOCKER_CONFIG/cli-plugins/docker-compose
 docker compose version
 ```
 ---
+**Docker Commands**
+1. list current running containers
+    ```
+   docker ps
+   ```
+2. list all containers
+   ```
+   docker ps -a
+   ```
+
+3. Stop All running containers
+   ```
+   sudo docker stop $(sudo docker ps -a -q)
+   ```
+4. Remove all containers
+   ```
+   sudo docker rm $(sudo docker ps -a -q)
+   ```
