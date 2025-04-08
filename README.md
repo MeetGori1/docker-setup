@@ -37,3 +37,7 @@ docker compose version
    ```
    sudo docker rm $(sudo docker ps -a -q)
    ```
+5. remove all images
+   ```
+   sudo docker rmi $(sudo docker ps -a -q)
+   ```
