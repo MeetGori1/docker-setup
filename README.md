@@ -41,3 +41,31 @@ docker compose version
    ```
     sudo docker rmi -f $(docker images -q)
    ```
+
+   ---
+   **Push image to docker hub**
+   1. need to add dockerfile in code
+   2. then build image from it
+       ```
+          docker build -t <image-name> .
+       ```
+   3. run in detach mode
+      ```
+      docker run -d -p 3000:3000 traveling-site-image
+      ```
+   4. then commit
+      ```
+      docker commit <container name> <new image name>
+      ```
+   5. then tag image
+      ```
+      docker tag <new image name> <username/newimagename:tag> 
+      ```
+   6. then login to docker
+      ```
+      docker login
+      ```
+   7. then push to docker hub
+      ```
+      docker push <username/newimagename:tag>
+      ```
